@@ -95,7 +95,7 @@ export default class SignUp extends Component {
           swal({
             icon: "success",
             title: "Registered!",
-            text: "goto to login",
+            text: "Goto to login",
           }).then((value) => {
             window.location.href = "/sign-in";
           });

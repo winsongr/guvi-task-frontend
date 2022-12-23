@@ -31,9 +31,9 @@ export default class Login extends Component {
       if (res.data["message"] === "success") {
         swal({
           icon: "success",
-          title: "Registered!",
-          text: "goto to login",
+          title: "Logged In!",
         }).then((value) => {
+          localStorage.setItem("userId", res.data["id"]);
           window.location.href = "/profile";
         });
       } else if (res.data["message"] === "Oops!, Wrong Password try again") {

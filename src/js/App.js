@@ -7,13 +7,18 @@ import SignUp from "../components/signup";
 import Profile from "../components/profile";
 
 function App() {
+  var userData = localStorage.getItem("userId");
   return (
     <Router>
       <div className="App">
         <div className="auth-wrapper">
           <div className="auth-inner">
             <Routes>
-              <Route exact path="/" element={<Login />} />
+              <Route
+                exact
+                path="/"
+                element={userData !== null ? <Profile /> : <Login />}
+              />
               <Route path="/sign-in" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
               <Route path="/profile" element={<Profile />} />
