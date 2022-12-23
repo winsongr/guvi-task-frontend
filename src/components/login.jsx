@@ -28,7 +28,6 @@ export default class Login extends Component {
       password: this.state.password,
     };
     axios.post("https://guvitask.onrender.com/login", login).then((res) => {
-      console.log(res);
       if (res.data["message"] === "success") {
         swal({
           icon: "success",
